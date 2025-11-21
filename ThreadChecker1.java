@@ -11,6 +11,15 @@ public class ThreadChecker1
 		    }
 		};
 
+		long[] results = new long[1000];
 
+		for (Thread t : threads) t.start();
+		for (Thread t : threads) {
+		    try {
+		        t.join();
+		    } catch (InterruptedException e) {
+		        e.printStackTrace();
+		    }
+		}
 	}
 }
