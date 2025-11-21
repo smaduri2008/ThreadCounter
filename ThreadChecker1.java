@@ -2,6 +2,8 @@ public class ThreadChecker1
 {
     public static void main(String[] args)
     {
+        long start = System.currentTimeMillis();
+
         Thread[] threads = new Thread[1000];
 
         long[] results = new long[1000];
@@ -37,5 +39,10 @@ public class ThreadChecker1
         }
 
         System.out.println("Final total: " + finalTotal);
+
+        long end = System.currentTimeMillis();
+        long elapsed = end - start;
+
+        System.out.println("Time to execute: " + elapsed + " ms");
     }
 }
